@@ -21,4 +21,8 @@ class Thermostat {
     return this.temperature;
   }
 
+  increase(temp) {
+    this.temperature += temp;
+  }
+
 }

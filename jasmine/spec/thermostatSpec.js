@@ -6,13 +6,10 @@ describe ('Thermostat', function() {
 
   beforeEach(function() {
     thermostat = new Thermostat();
+    thermostat.start();
   });
 
   describe ('starts the thermostat', function() {
-
-    beforeEach(function() {
-      thermostat.start();
-    });
 
     it('checks if thermostat is on', function() {
       expect(thermostat.getIsOn()).toBe(true);
@@ -23,4 +20,11 @@ describe ('Thermostat', function() {
     });
   });
 
+  describe ('changes temperature', function() {
+    it('should increase the temperature', function() {
+      thermostat.increase(5);
+      expect(thermostat.getTemperature()).toEqual(25);
+    });
+
+  });
 });
