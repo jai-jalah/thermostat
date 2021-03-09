@@ -42,6 +42,11 @@ class Thermostat {
     this.maximumTemperature = 25;
   }
 
+  powerSavingOff() {
+    this.powerSavingMode = false;
+    this.maximumTemperature = 32;
+  }
+
   getPowerSavingMode() {
     return this.powerSavingMode;
   }
