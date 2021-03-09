@@ -34,11 +34,26 @@ describe ('Thermostat', function() {
 
   describe ('minimum temperature', function() {
     it('should set minimum temperature to 10 degrees', function() {
-      var i;
-      for (i = 0; i < 11; i++) {
+      for (var i = 0; i < 11; i++) {
         thermostat.down(1);
       }
       expect(thermostat.getTemperature()).toEqual(10);
+    });
+  });
+
+  describe ('power saving mode', function() {
+    it('should set powerSavingOn to true', function(){
+      thermostat.powerSavingOn()
+      expect(thermostat.getPowerSavingMode()).toBe(true)
+    });
+
+    it('should set max temperature to 25 degrees', function(){
+      thermostat.powerSavingOn()
+
+      for (var i = 0; i < 6; i++) {
+        thermostat.up(1);
+      }
+      expect(thermostat.getTemperature()).toEqual(25);
     });
   });
 });

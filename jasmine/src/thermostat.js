@@ -7,8 +7,8 @@ class Thermostat {
   }
 
   start() {
-    this.isOn = true
-    this.temperature = 20
+    this.isOn = true;
+    this.temperature = 20;
   }
 
   getIsOn() {
@@ -20,6 +20,9 @@ class Thermostat {
   }
 
   up(temp) {
+    if (this.temperature === this.maximumTemperature) {
+      return;
+    }
     this.temperature += temp;
   }
 
@@ -33,5 +36,15 @@ class Thermostat {
   isMinimumTemperature() {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
+
+  powerSavingOn() {
+    this.powerSavingMode = true;
+    this.maximumTemperature = 25;
+  }
+
+  getPowerSavingMode() {
+    return this.powerSavingMode;
+  }
+
 
 }
