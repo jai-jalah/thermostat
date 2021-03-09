@@ -63,4 +63,8 @@ class Thermostat {
     return this.temperature === this.MAXIMUM_TEMPERATURE;
   }
 
+  reset() {
+    this.temperature = 20;
+  }
+
 }

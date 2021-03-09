@@ -81,4 +81,10 @@ describe ('Thermostat', function() {
       expect(thermostat.getPowerSavingMode()).toBe(true);
     });
   });
+
+  describe ('reset function', function() {
+    it('should set the current temperature to 20', function() {
+      expect(thermostat.getTemperature()).toEqual(20);
+    });
+  });
 });
