@@ -22,9 +22,23 @@ describe ('Thermostat', function() {
 
   describe ('changes temperature', function() {
     it('should increase the temperature', function() {
-      thermostat.increase(5);
+      thermostat.up(5);
       expect(thermostat.getTemperature()).toEqual(25);
     });
 
+    it('should decrease the temperature', function() {
+      thermostat.down(5);
+      expect(thermostat.getTemperature()).toEqual(15);
+    });
+  });
+
+  describe ('minimum temperature', function() {
+    it('should set minimum temperature to 10 degrees', function() {
+      var i;
+      for (i = 0; i < 11; i++) {
+        thermostat.down(1);
+      }
+      expect(thermostat.getTemperature()).toEqual(10);
+    });
   });
 });
