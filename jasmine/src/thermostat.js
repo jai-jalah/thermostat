@@ -67,4 +67,16 @@ class Thermostat {
     this.temperature = 20;
   }
 
+  energyUsage() {
+    if (this.getTemperature() < 18) {
+      return 'low-usage';
+    }
+    else if(this.getTemperature() <= 25) {
+      return 'medium-usage';
+    }
+    else {
+      return 'high-usage';
+    }
+  }
+
 }
