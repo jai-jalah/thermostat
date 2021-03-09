@@ -1,17 +1,24 @@
 'use strict';
 
 class Thermostat {
-  
+
   constructor() {
     this.isOn = false;
+    this.temperature = 0;
+
+  }
+
+  start() {
+    this.isOn = true
+    this.temperature = 20
   }
 
   getIsOn() {
     return this.isOn;
   }
 
-  start() {
-    this.isOn = true;
+  getTemperature() {
+    return this.temperature;
   }
 
 }

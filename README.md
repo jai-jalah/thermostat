@@ -14,3 +14,6 @@ start thermostat > thermostat.isOn() > true
 As a user
 So that I can set the temperature of something
 See that the thermostat is automatically at 20 degrees when it starts
+
+### Plan
+start thermostat > thermostat_temperature > 20 
