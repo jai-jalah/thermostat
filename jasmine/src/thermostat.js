@@ -4,6 +4,7 @@ class Thermostat {
 
   constructor() {
     this.MINIMUM_TEMPERATURE = 10;
+    this.powerSavingMode = true;
   }
 
   start() {
@@ -20,7 +21,7 @@ class Thermostat {
   }
 
   up(temp) {
-    if (this.temperature === this.maximumTemperature) {
+    if (this.isMaximumTemperature()) {
       return;
     }
     this.temperature += temp;
@@ -39,17 +40,27 @@ class Thermostat {
 
   powerSavingOn() {
     this.powerSavingMode = true;
-    this.maximumTemperature = 25;
   }
 
   powerSavingOff() {
     this.powerSavingMode = false;
-    this.maximumTemperature = 32;
   }
 
   getPowerSavingMode() {
     return this.powerSavingMode;
   }
 
+  maximumTemperature() {
+    if (this.getPowerSavingMode()) {
+      this.MAXIMUM_TEMPERATURE = 25;
+    } else {
+      this.MAXIMUM_TEMPERATURE = 32;
+    }
+  }
+
+  isMaximumTemperature() {
+    this.maximumTemperature();
+    return this.temperature === this.MAXIMUM_TEMPERATURE;
+  }
 
 }

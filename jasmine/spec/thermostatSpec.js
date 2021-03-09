@@ -42,14 +42,15 @@ describe ('Thermostat', function() {
   });
 
   describe ('when power saving mode is on', function() {
-    it('should set powerSavingMode to true', function(){
-      thermostat.powerSavingOn()
-      expect(thermostat.getPowerSavingMode()).toBe(true)
+    beforeEach(function() {
+      thermostat.powerSavingOn();
     });
 
-    it('should set max temperature to 25 degrees', function(){
-      thermostat.powerSavingOn()
+    it('should set powerSavingMode to true', function() {
+      expect(thermostat.getPowerSavingMode()).toBe(true);
+    });
 
+    it('should set max temperature to 25 degrees', function() {
       for (var i = 0; i < 6; i++) {
         thermostat.up(1);
       }
@@ -58,18 +59,26 @@ describe ('Thermostat', function() {
   });
 
   describe ('when power saving mode is off', function() {
-    it('should set powerSavingMode to false', function(){
-      thermostat.powerSavingOff()
-      expect(thermostat.getPowerSavingMode()).toBe(false)
+
+    beforeEach(function() {
+      thermostat.powerSavingOff();
     });
 
-    it('should set max temperature to 32 degrees', function(){
-      thermostat.powerSavingOff()
+    it('should set powerSavingMode to false', function() {
+      expect(thermostat.getPowerSavingMode()).toBe(false);
+    });
 
+    it('should set max temperature to 32 degrees', function() {
       for (var i = 0; i < 13; i++) {
         thermostat.up(1);
       }
       expect(thermostat.getTemperature()).toEqual(32);
+    });
+  });
+
+  describe ('power saving mode', function() {
+    it('should be on by default', function() {
+      expect(thermostat.getPowerSavingMode()).toBe(true);
     });
   });
 });
