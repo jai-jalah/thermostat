@@ -1,21 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Swanky Thermostat</title>
+  <title>Swanky Thermostat 👀</title>
 </head>
 
 <body>
   <section>
-    <h1 id="that temperature tho 👀"></h1>
+    <h1 id="temperature"></h1>
     <p>
+      <button id="start-thermostat">Start Swankostat</button>
       <button id="temperature-up">+</button>
       <button id="temperature-down">-</button>
       <button id="temperature-reset">Reset</button>
-      Power Saving Mode is <span id="power-saving-status">on</span>
+      Power Saving Mode is <span id="power-saving-status"></span>
       <button id="power-saving-on">Power Saving On</button>
       <button id="power-saving-off">Power Saving Off</button>
     </p>
   </section>
-  <script src="src/thermostat.js"></script>
+  <script src="jasmine/src/thermostat.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script src="interface.js"></script>
+  <link rel="styling" href="styling.css">
 </body>
 </html>
