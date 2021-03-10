@@ -108,3 +108,14 @@ I want to be able to check my current energy usage level
 ### Plan
 energyUsage()
   getTemperature < 18 return low-usage, else if <= 25 return medium-usage, else return high-usage
+
+## Interface Plans
+
+Functions to add to the interface:
+- 'Start thermostat' = thermostat.start()
+- '+' = thermostat.up()
+- '-' = thermostat.down()
+- 'Reset temperature' = thermostat.reset()
+- 'Turn Power Saving on' = thermostat.powerSavingOn()
+- 'Turn Power Saving off' = thermostat.powerSavingOff()
+- 'Power Saving Mode is on/off' = thermostat.getPowerSavingMode()
